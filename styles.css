@@ -1,4 +1,3 @@
-/* styles.css */
 :root {
     --mocha-mouse: #967969;
     --light-mocha: #B79B8F;
@@ -13,7 +12,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     background-color: var(--background);
     color: #333;
@@ -73,9 +72,19 @@ button:hover {
 
 .ingredient-entry {
     display: grid;
-    grid-template-columns: 0.8fr 1fr 2fr 1.5fr 0.3fr;
+    grid-template-columns: 2fr 0.8fr 1fr 1.5fr 0.3fr;
     gap: 0.5rem;
     margin-bottom: 0.5rem;
+}
+
+input, select {
+    padding: 0.5rem;
+    border: 1px solid var(--light-mocha);
+    border-radius: 4px;
+}
+
+#ingredients {
+    margin: 1rem 0;
 }
 
 .hidden {
@@ -100,10 +109,37 @@ button:hover {
     margin-bottom: 2rem;
 }
 
-select {
-    padding: 0.5rem;
-    border: 1px solid var(--light-mocha);
+.categories span {
+    background-color: var(--light-mocha);
+    color: white;
+    padding: 0.2rem 0.5rem;
     border-radius: 4px;
+    margin-right: 0.5rem;
+}
+
+#selectedRecipes {
+    margin: 1rem 0;
+}
+
+.selected-recipe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: white;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+#weeklyPlan {
+    margin-bottom: 2rem;
+}
+
+#shoppingList {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 2rem;
 }
 
 @media (max-width: 768px) {
