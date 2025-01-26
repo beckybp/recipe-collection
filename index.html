@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <h1>Recipe Manager</h1>
+        <button id="addRecipeBtn">Add Recipe</button>
+    </nav>
+
+    <main>
+        <section id="filters">
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="quick">Quick & Easy</option>
+                <option value="soups">Soups</option>
+                <option value="breakfast">Breakfast</option>
+            </select>
+        </section>
+
+        <section id="recipes"></section>
+
+        <section id="weeklyPlan">
+            <h2>Weekly Plan</h2>
+            <div id="selectedRecipes"></div>
+            <button id="generateList">Generate Shopping List</button>
+        </section>
+
+        <div id="shoppingList" class="hidden">
+            <h2>Shopping List</h2>
+            <div id="organizedList"></div>
+            <button id="downloadList">Download List</button>
+        </div>
+    </main>
+
+    <!-- Add Recipe Modal -->
+    <div id="addRecipeModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Add Recipe</h2>
+            <form id="recipeForm">
+                <input type="text" id="recipeName" placeholder="Recipe Name" required>
+                
+                <div class="categories">
+                    <label>Categories:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="quickEasy" value="quick">
+                        <label for="quickEasy">Quick & Easy</label>
+                        
+                        <input type="checkbox" id="soups" value="soups">
+                        <label for="soups">Soups</label>
+                        
+                        <input type="checkbox" id="breakfast" value="breakfast">
+                        <label for="breakfast">Breakfast</label>
+                    </div>
+                </div>
+
+                <div id="ingredients">
+                    <h3>Ingredients</h3>
+                    <div class="ingredient-entry">
+                        <input type="number" step="0.25" placeholder="Amount">
+                        <select class="unit">
+                            <option value="unit">Unit</option>
+                            <option value="g">grams</option>
+                            <option value="ml">ml</option>
+                            <option value="tbsp">tbsp</option>
+                            <option value="tsp">tsp</option>
+                        </select>
+                        <input type="text" placeholder="Ingredient">
+                        <select class="section">
+                            <option value="produce">Fresh Produce</option>
+                            <option value="canned">Canned Goods</option>
+                            <option value="dried">Dried Foods</option>
+                        </select>
+                        <button type="button" class="removeIngredient">×</button>
+                    </div>
+                </div>
+                <button type="button" id="addIngredient">Add Ingredient</button>
+                <button type="submit">Save Recipe</button>
+                <button type="button" class="closeModal">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
